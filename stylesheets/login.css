@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.form-box h2 {
+    font-size: 30px;
+    margin-bottom: 50px;
+    color:#000000;
+    position: relative;
+}
+
+.form-box{
+    width: 90%;
+    max-width: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 50px 60px 70px;
+    text-align: center;
+}   
+
+.login-container {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(42, 42, 234, 0.8), rgba(59, 130, 216, 0.8)), url("https://image-processor-storage.s3.us-west-2.amazonaws.com/uploads/59a92b86356edef5104e752c53cfc2c5/862j03drf-api-lp-kahoot-bannerjpg.jpg");
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-group input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.input-field {
+    margin-bottom: 20px;
+    text-align: left;
+    max-height: 65px;
+    transition: max-height 0.5s;
+    overflow: hidden;
+}
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.input-field input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.btn-field {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+
+}
+.btn-field button {
+    flex-basis: 48%;
+    background: #000000;
+    color: #fff;
+    height: 40px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: backgroud 1s;
+
+}
