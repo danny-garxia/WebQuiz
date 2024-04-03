@@ -28,6 +28,7 @@ function loadComponent(filename, target) {
 			loadComponent("components/userprofilemenu.html", "UserAccountArea").then(()=> {
 				$("#LogoutButton").on("click", () => {
 					usermanager.logout();
+					window.location.reload();
 				});
 
 				const user = usermanager.getLoggedInUser();
