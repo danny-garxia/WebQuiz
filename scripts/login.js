@@ -1,14 +1,20 @@
-function validateLogin() {
-    var enteredEmail = document.getElementById('email').value;
-    var enteredPassword = document.getElementById('password').value;
+(function (window) {
+    'use strict';
 
-    var storedEmail = localStorage.getItem('userEmail');
-    var storedPassword = localStorage.getItem('userPwd');
+    var App = window.App;
+    var UserManager = App.UserManager;
+    var usermanager = new UserManager();
 
-    if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
-        alert('Login successful!');
-        window.location.href = 'index.html'; // Redirects to index.html upon successful login
-    } else {
-        alert('Incorrect email or password.');
-    }
-}
+    const submitBtn = document.querySelector("#submitBtn");
+    submitBtn.addEventListener("click", async () => {
+        
+        try {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const abc = await usermanager.login(email, password);
+            window.location.href = "index.html";
+        } catch (error) {
+            alert(error);
+        }
+    });
+})(window);
