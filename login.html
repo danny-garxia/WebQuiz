@@ -13,22 +13,21 @@
         <form>
             <div class="input-group">
                 <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter your email">
+                <input type="text" name="email" id="email" placeholder="Enter your email">
             </div>
 
             <div class="input-group">
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password">
+                <input type="password" name="password" id="password" placeholder="Enter your password">
             </div>
 
             <div class="btn-field">
-                <button type="button" id="submitBtn">Sign In</button>
+                <button type="button" id="signinBtn" onclick="validateLogin()">Sign In</button>
                 <p>Create an account? <a href='signup.html'>SignUp</a></p>
             </div>
         </form>
     </div>
 </div>
-<script src="scripts/usermanager.js" charset="utf-8"></script>
 <script src="scripts/login.js"></script>
 </body>
 </html>

@@ -1,45 +1,44 @@
-/**
- * Loads HTML content from a file and inserts it into the specified target element.
- * @param {string} filename - The name or URL of the file containing the HTML content to load.
- * @param {string} target - The ID of the target element where the loaded HTML content will be inserted.
- */
-function loadComponent(filename, target) {
-	var promise = fetch(filename)
+function loadUserAccountArea() {
+	fetch('components/loginarea.html')
 		.then(response => response.text())
 		.then(html => {
-			document.getElementById(target).innerHTML = html;
+			document.getElementById('UserAccountArea').innerHTML = html;
 	});
+}
 
-	return promise;
+function loadNavBar() {
+	fetch('components/navbar.html')
+		.then(response => response.text())
+		.then(html => {
+				document.getElementById('NavBar').innerHTML = html;
+		}).then(()=>{
+			loadUserAccountArea()
+	});
+}
+
+function loadHomePage() {
+	fetch('pages/home.html')
+		.then(response => response.text())
+		.then(html => {
+				document.getElementById('ContentArea').innerHTML = html;
+		}).then(()=>{
+			loadUserAccountArea()
+	});
 }
 
 (function (window) {
-	'use strict';
+		'use strict';
 
-	var App = window.App;
-	var UserManager = App.UserManager;
-	var usermanager = new UserManager();
-	console.log("Logged in user")
-	console.log(usermanager.getLoggedInUser());
-	console.log(usermanager.isLoggedIn());
+		var USER_ACCOUNT_SELECTOR = '.UserAccount';
 
-	loadComponent("components/navbar.html", "NavBar").then(()=>{
-		if (usermanager.isLoggedIn()) {
-			loadComponent("components/userprofilemenu.html", "UserAccountArea").then(()=> {
-				$("#LogoutButton").on("click", () => {
-					usermanager.logout();
-					window.location.reload();
-				});
+		var App = window.App;
+		var UserManager = App.UserManager;
 
-				const user = usermanager.getLoggedInUser();
-				$("#UserFullname").html(user["name"]);
-			});
-			
-		} else {
-			loadComponent("components/loginarea.html", "UserAccountArea");
-		}
+		$(document).ready(function () {
+			loadNavBar();
+			loadHomePage();
+		});
 		
-	});
-
-	loadComponent("pages/home.html", "ContentArea");
+		// var elem = document.querySelector(USER_ACCOUNT_SELECTOR);
+		// // elem.innerHTML = "login | signup";
 })(window);

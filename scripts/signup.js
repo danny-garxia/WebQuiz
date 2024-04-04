@@ -1,21 +1,12 @@
-(function (window) {
-    'use strict';
+function addData() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var password = document.getElementById('pwd').value;
 
-    var App = window.App;
-    var UserManager = App.UserManager;
-    var usermanager = new UserManager();
+    localStorage.setItem('userName', name);
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('userPwd', password);
 
-    const submitBtn = document.querySelector("#submitBtn");
-    submitBtn.addEventListener("click", () => {
-        
-        try {
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            usermanager.register(name, email, password);
-            window.location.href = "login.html";
-        } catch (error) {
-            alert(error);
-        }
-    });
-})(window);
+    // Redirect to login page after storing the data
+    window.location.href = 'login.html';
+}
