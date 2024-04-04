@@ -41,5 +41,5 @@ function loadComponent(filename, target) {
 		
 	});
 
-	loadComponent("pages/home.html", "ContentArea");
+	// loadComponent("pages/home.html", "ContentArea");
 })(window);
