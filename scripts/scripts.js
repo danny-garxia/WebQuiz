@@ -1,3 +1,4 @@
+
 //Initializing the box sectionsand option list by getting the class with querry selectors
 const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
@@ -138,7 +139,7 @@ newQuizBtn.onclick =()=>{
 //function gets question and options from array and displays it in HTML
 function showQuestions(index){
     const questiontext =document.querySelector('.question-text');
-    questiontext.textContent = `${questions[index].numb}. ${questions[index].question}`;
+    questiontext.textContent =  `${questions[index].question}`;
     let optionTag =`<div class ="option"><span>${questions[index].options[0]}</span></div>
     <div class ="option"><span>${questions[index].options[1]}</span></div>
     <div class ="option"><span>${questions[index].options[2]}</span></div>
