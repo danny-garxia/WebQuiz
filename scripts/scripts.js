@@ -119,14 +119,26 @@ newQuizBtn.onclick =()=>{
     hideScore();
 }
 
-function startQuiz() {
-    showQuiz();
-    questionCount = 0;
-    questionNum = 1;
-    userScore = 0;
-    showQuestions(questionCount);
-    questionCounter(questionNum);
+function isLoggedIn() {
+    const App = window.App;
+	const UserManager = App.UserManager;
+	const usermanager = new UserManager();
+	return usermanager.isLoggedIn();
 }
+
+function startQuiz() {
+    if (isLoggedIn()) {
+        showQuiz();
+        questionCount = 0;
+        questionNum = 1;
+        userScore = 0;
+        showQuestions(questionCount);
+        questionCounter(questionNum);
+    } else {
+        alert("You need to login to play");
+    }
+}
+
 //Function to get questions based on the quiz version
 function getQuestionsForQuiz(quizVersion) {
     switch (quizVersion) {
