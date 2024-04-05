@@ -1,4 +1,7 @@
 # WebQuiz
+Daniel Garcia
+Nathan Nguyen
+Luis Rios
 
 Run the signup.html file 
 sign up with email and password 
