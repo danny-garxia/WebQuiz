@@ -10,3 +10,9 @@ sign in with email amd password you used to sign up
 pick the quiz you want to take then slect your choice
 Click next to go to next quiz untill youve answered all questions
 recieve score take a new quiz or retake the quiz
+
+# How to run
+#### Start Browsersync
+```bash
+browser-sync start --server --browser "Google Chrome" --files "*/*.css, *.html, */*.js" --open external
+```
